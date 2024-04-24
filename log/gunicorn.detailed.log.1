@@ -1,0 +1,80 @@
+[2024-04-23 12:19:07,545] INFO _log() L96   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.67:5000 - call_trace=C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-23 12:19:07,549] INFO _log() L96   [33mPress CTRL+C to quit[0m - call_trace=C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-23 12:19:18,160] ERROR log_exception() L838  Exception on /cliente [GET] - call_trace=C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\flask\app.py L838 
+Traceback (most recent call last):
+  File "C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\sqlalchemy\sql\elements.py", line 1494, in __getattr__
+    return getattr(self.comparator, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Comparator' object has no attribute 'contais'. Did you mean: 'contains'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\sqlalchemy\orm\attributes.py", line 472, in __getattr__
+    return getattr(self.comparator, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\sqlalchemy\util\langhelpers.py", line 1328, in __getattr__
+    return self._fallback_getattr(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\sqlalchemy\orm\properties.py", line 474, in _fallback_getattr
+    return getattr(self.__clause_element__(), key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\sqlalchemy\sql\elements.py", line 1496, in __getattr__
+    raise AttributeError(
+AttributeError: Neither 'AnnotatedColumn' object nor 'Comparator' object has an attribute 'contais'. Did you mean: 'contains'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\flask_openapi3\scaffold.py", line 117, in view_func
+    response = func(**func_kwargs)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\app.py", line 257, in get_cliente
+    cliente = session.query(Cliente).filter(Cliente.cpf == cpf | Cliente.nome.contais(nome)).first() # fazendo a busca
+                                                                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\sqlalchemy\orm\attributes.py", line 474, in __getattr__
+    raise AttributeError(
+AttributeError: Neither 'InstrumentedAttribute' object nor 'Comparator' object associated with Cliente.nome has an attribute 'contais'. Did you mean: 'contains'?
+[2024-04-23 12:19:18,175] INFO _log() L96   127.0.0.1 - - [23/Apr/2024 12:19:18] "[35m[1mGET /cliente?cpf=1317635973&nome=José%20da%20Silva HTTP/1.1[0m" 500 - - call_trace=C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-23 12:19:52,843] INFO _log() L96   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.67:5000 - call_trace=C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-23 12:19:52,844] INFO _log() L96   [33mPress CTRL+C to quit[0m - call_trace=C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-23 12:19:55,020] WARNING get_cliente() L261  Cliente cpf #1317635973 ou nome 'José da Silva' não encontrado, Cliente não encontrado na base :/ - call_trace=C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\app.py L261 
+[2024-04-23 12:19:55,021] INFO _log() L96   127.0.0.1 - - [23/Apr/2024 12:19:55] "[33mGET /cliente?cpf=1317635973&nome=José%20da%20Silva HTTP/1.1[0m" 404 - - call_trace=C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-23 12:20:00,533] INFO _log() L96   127.0.0.1 - - [23/Apr/2024 12:20:00] "GET /cliente?cpf=1317635973&nome=Phill HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-23 12:20:05,814] WARNING get_cliente() L261  Cliente cpf #1317635973 ou nome 'Jos' não encontrado, Cliente não encontrado na base :/ - call_trace=C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\app.py L261 
+[2024-04-23 12:20:05,815] INFO _log() L96   127.0.0.1 - - [23/Apr/2024 12:20:05] "[33mGET /cliente?cpf=1317635973&nome=Jos HTTP/1.1[0m" 404 - - call_trace=C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-23 12:20:09,368] WARNING get_cliente() L261  Cliente cpf #13176359730 ou nome 'Jos' não encontrado, Cliente não encontrado na base :/ - call_trace=C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\app.py L261 
+[2024-04-23 12:20:09,369] INFO _log() L96   127.0.0.1 - - [23/Apr/2024 12:20:09] "[33mGET /cliente?cpf=13176359730&nome=Jos HTTP/1.1[0m" 404 - - call_trace=C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-23 12:20:10,889] WARNING get_cliente() L261  Cliente cpf #13176359730 ou nome 'Jos' não encontrado, Cliente não encontrado na base :/ - call_trace=C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\app.py L261 
+[2024-04-23 12:20:10,890] INFO _log() L96   127.0.0.1 - - [23/Apr/2024 12:20:10] "[33mGET /cliente?cpf=13176359730&nome=Jos HTTP/1.1[0m" 404 - - call_trace=C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-23 17:58:44,343] INFO _log() L96   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.15.143:5000 - call_trace=C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-23 17:58:44,351] INFO _log() L96   [33mPress CTRL+C to quit[0m - call_trace=C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-23 17:59:25,666] INFO _log() L96   127.0.0.1 - - [23/Apr/2024 17:59:25] "[32mGET / HTTP/1.1[0m" 302 - - call_trace=C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-23 17:59:25,692] INFO _log() L96   127.0.0.1 - - [23/Apr/2024 17:59:25] "GET /openapi/ HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-23 17:59:25,890] INFO _log() L96   127.0.0.1 - - [23/Apr/2024 17:59:25] "[36mGET /openapi/static/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-23 17:59:25,913] INFO _log() L96   127.0.0.1 - - [23/Apr/2024 17:59:25] "[36mGET /openapi/static/images/redoc.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2024-04-23 17:59:25,935] INFO _log() L96   127.0.0.1 - - [23/Apr/2024 17:59:25] "[36mGET /openapi/static/images/rapidoc.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\phill\Desktop\mvp-backend-avançado\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  

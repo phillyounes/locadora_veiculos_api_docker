@@ -1,0 +1,61 @@
+[2023-12-11 09:41:21,094] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 09:41:21] "OPTIONS /carro/devolve?placa=ABC1D23 HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 09:41:21,142] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 09:41:21] "PUT /carro/devolve?placa=ABC1D23 HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 09:41:22,282] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 09:41:22] "GET /carros HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:02:08,700] INFO _log() L96   [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.37:5000 - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:02:08,702] INFO _log() L96   [33mPress CTRL+C to quit[0m - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:04:34,626] WARNING add_carro() L53   Erro ao adicionar carro da placa 'ABC1D23', Carro de mesma placa já salva na base :/ - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\app.py L53  
+[2023-12-11 18:04:34,628] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:04:34] "[31m[1mPOST /carro HTTP/1.1[0m" 409 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:04:42,896] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:04:42] "OPTIONS /carro/aluga?placa= HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:04:42,920] ERROR log_exception() L825  Exception on /carro/aluga [PUT] - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\flask\app.py L825 
+Traceback (most recent call last):
+  File "C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\flask\app.py", line 1455, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\flask\app.py", line 869, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\flask\app.py", line 867, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\flask\app.py", line 852, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\flask_openapi3\scaffold.py", line 117, in view_func
+    response = func(**func_kwargs)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\app.py", line 141, in aluga_carro
+    count = atualizaCarroAlugado(carro_placa, True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\app.py", line 189, in atualizaCarroAlugado
+    if (carro.placa == ''):
+        ^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'placa'
+[2023-12-11 18:04:42,933] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:04:42] "[35m[1mPUT /carro/aluga?placa= HTTP/1.1[0m" 500 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:04:44,140] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:04:44] "GET /carros HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:04:46,327] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:04:46] "GET /carros HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:04:49,866] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:04:49] "OPTIONS /carro/aluga?placa=ABC1D23 HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:04:49,887] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:04:49] "PUT /carro/aluga?placa=ABC1D23 HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:04:50,862] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:04:50] "GET /carros HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:05:01,155] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:05:01] "GET /carros HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:05:07,059] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:05:07] "POST /carro HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:05:17,879] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:05:17] "OPTIONS /carro/aluga?placa=asads HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:05:17,910] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:05:17] "PUT /carro/aluga?placa=asads HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:05:18,961] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:05:18] "GET /carros HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:05:28,107] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:05:28] "OPTIONS /carro/devolve?placa=asads HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:05:28,137] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:05:28] "PUT /carro/devolve?placa=asads HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:05:29,022] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:05:29] "GET /carros HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:05:33,183] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:05:33] "OPTIONS /carro?placa=asads HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:05:33,205] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:05:33] "DELETE /carro?placa=asads HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:06:11,461] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:06:11] "GET /carros HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:09:56,067] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:09:56] "GET /carros HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:11:01,794] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:11:01] "GET /carros HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:11:27,734] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:11:27] "GET /carros HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:11:56,493] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:11:56] "GET /carros HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:12:10,496] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:12:10] "OPTIONS /carro/devolve?placa=ABC1D23 HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
+[2023-12-11 18:12:10,527] INFO _log() L96   127.0.0.1 - - [11/Dec/2023 18:12:10] "PUT /carro/devolve?placa=ABC1D23 HTTP/1.1" 200 - - call_trace=C:\Users\phill\Desktop\mvp-full-stack\locadora_veiculos_api\env\Lib\site-packages\werkzeug\_internal.py L96  
