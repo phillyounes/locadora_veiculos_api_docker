@@ -297,7 +297,7 @@ def get_cep(query: CepConsultaSchema):
     if (response.status_code == 200):
         data = response.json()
 
-        if (data.erro.contains("true")):
+        if ("erro" in data and data["erro"] == True):
             return {"mesage": "Não encontrado"}, 404
 
         return data, 200
