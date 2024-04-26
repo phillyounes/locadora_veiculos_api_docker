@@ -166,10 +166,12 @@ const buscaCep = () => {
 	})
     .then((response) => response.json())
 	.then((endereco) => {
-		document.getElementById("txtLogradouro").value = endereco.logradouro;
-		document.getElementById("txtBairro").value = endereco.bairro;
-		document.getElementById("txtUF").value = endereco.uf;
-		document.getElementById("txtMunicipio").value = endereco.localidade;
+    if (endereco.mesage != "Não encontrado") {
+      document.getElementById("txtLogradouro").value = endereco.logradouro;
+      document.getElementById("txtBairro").value = endereco.bairro;
+      document.getElementById("txtUF").value = endereco.uf;
+      document.getElementById("txtMunicipio").value = endereco.localidade;
+    }
 	})
     .catch((error) => {
       console.error('Cep não encontrado:', error);
