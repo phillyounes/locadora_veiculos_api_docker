@@ -24,9 +24,9 @@ services:
   frontend:
     container_name: nginx
     restart: always
-    build:
-        context: ./frontend
-        dockerfile: Dockerfile
+    build: ./frontend
+    ports:
+      - 8090:80
     # volumes:
     #     - ${APPLICATION}:/var/www/html
     #     - ${NGINX_HOST_LOG_PATH}:/var/log/nginx

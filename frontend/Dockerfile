@@ -12,17 +12,20 @@
 
 # define a imagem base
 FROM debian:latest
+
 # define o mantenedor da imagem
-LABEL maintainer="phillip"
+LABEL maintainer="MVP"
+
 # Atualiza a imagem com os pacotes
 RUN apt-get update && apt-get upgrade -y
+
 # Instala o NGINX para testar
 RUN apt-get install nginx -y
 
 # Copie os arquivos da aplicação para o diretório padrão do servidor web do Nginx
 COPY . /usr/share/nginx/html
 
-# Expoe a porta 8085
-EXPOSE 8085
+# Expoe a porta 80
+EXPOSE 80
 # Comando para iniciar o NGINX no Container
 CMD ["nginx", "-g", "daemon off;"]
