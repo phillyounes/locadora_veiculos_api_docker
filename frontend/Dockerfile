@@ -22,7 +22,7 @@ RUN apt-get install nginx -y
 # Copie os arquivos da aplicação para o diretório padrão do servidor web do Nginx
 COPY . /usr/share/nginx/html
 
-# Expoe a porta 80
-EXPOSE 8080
+# Expoe a porta 8085
+EXPOSE 8085
 # Comando para iniciar o NGINX no Container
 CMD ["nginx", "-g", "daemon off;"]
