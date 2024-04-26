@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Cadastro de Clientes</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Cabeçalho de informações do sistema -->
+      <header>
+        <div class="title">
+          <h2>Clientes</h2>
+        </div>
+        <div class="banner">
+          <img src="./img/clientes.png" alt="y" style="height: 300px" />
+        </div>
+      </header>
+
+      <!-- Opções para adicionar um novo item -->
+      <!--section class="newItem"-->
+      <div class="client-form">
+        <div class="client-info">
+          <input type="text" id="txtCpf" placeholder="CPF:" />
+          <input type="text" id="txtNome" placeholder="Nome:" />
+          <input type="text" id="txtEmail" placeholder="e-mail:" />
+        </div>
+
+        <div class="client-info">
+          <input type="text" id="txtCep" placeholder="CEP:" />
+          <button type="button" onclick="buscaCep()">buscar CEP</button>
+        </div>
+
+        <div class="client-info">
+          <input
+            type="text"
+            readonly
+            style="background-color: #e8e8e8"
+            id="txtLogradouro"
+            placeholder="Logradouro:"
+          />
+          <input
+            type="text"
+            readonly
+            style="background-color: #e8e8e8"
+            id="txtBairro"
+            placeholder="Bairro:"
+          />
+          <input
+            type="text"
+            readonly
+            style="background-color: #e8e8e8"
+            id="txtUF"
+            placeholder="UF:"
+          />
+        </div>
+
+        <div class="client-info">
+          <input
+            type="text"
+            readonly
+            style="background-color: #e8e8e8"
+            id="txtMunicipio"
+            placeholder="Municipio:"
+          />
+          <input type="text" id="txtNumero" placeholder="Numero:" />
+          <input type="text" id="txtComplemento" placeholder="Complemento:" />
+        </div>
+        <span onclick="newItem()" class="addBtn">Adicionar</span>
+      </div>
+      <!--/section-->
+
+      <!-- Tabela com items existentes -->
+      <section class="items">
+        <table id="myTable">
+          <tr>
+            <th>CPF</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/126/126468.png"
+                width="15px"
+                height="15px"
+              />
+            </th>
+          </tr>
+        </table>
+      </section>
+    </div>
+    <script src="scripts-clientes.js"></script>
+  </body>
+</html>
