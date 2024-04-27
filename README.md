@@ -1,4 +1,4 @@
-# Locadora de veículos API
+# Locadora de veículos Frontend + API + Docker
 
 Este é o MVP de uma locadora de veículos.
 
