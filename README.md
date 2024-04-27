@@ -2,7 +2,7 @@
 
 Este é o MVP de uma locadora de veículos.
 
-O objetivo desse projeto é cadastrar o carro, marcar como alugado e realizar a devolução.
+O objetivo desse projeto é cadastrar o carro, marcar como alugado e realizar a devolução. Além disso, cadastrar os clientes consultando o endereço via cep (API pública).
 
 ---
 ## Como executar 

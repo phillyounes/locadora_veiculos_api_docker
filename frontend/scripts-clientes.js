@@ -40,12 +40,19 @@ const newItem = () => {
   let cpf = document.getElementById("txtCpf").value;
   let nome = document.getElementById("txtNome").value;
   let email = document.getElementById("txtEmail").value;
+  let cep = document.getElementById("txtCep").value;
+  let endereco = document.getElementById("txtLogradouro").value;
+  let bairro = document.getElementById("txtBairro").value;
+  let uf = document.getElementById("txtUF").value;
+  let municipio = document.getElementById("txtMunicipio").value;
+  let numero = document.getElementById("txtNumero").value;
+  let complemento = document.getElementById("txtComplemento").value;
 
   if (cpf === '' || nome === '' || email === '') {
     alert("Digite o cpf, nome e e-mail do cliente!");
   }
   else {
-    postItem(cpf, nome, email)
+    postItem(cpf, nome, email, cep, endereco, bairro, uf, municipio, numero, complemento)
     alert("Item adicionado!")
   }
 }
@@ -55,8 +62,8 @@ const newItem = () => {
   Função para inserir items na lista apresentada
   --------------------------------------------------------------------------------------
 */
-const insertList = (cpf, nome, email) => {
-  var item = [ cpf, nome, email ]
+const insertList = (cpf, nome, email, cep, endereco, bairro, uf, municipio, numero, complemento) => {
+  var item = [ cpf, nome, email, cep, endereco, bairro, uf, municipio, numero, complemento ]
   var table = document.getElementById('myTable');
   var row = table.insertRow();
 
@@ -68,6 +75,13 @@ const insertList = (cpf, nome, email) => {
   document.getElementById("txtCpf").value = "";
   document.getElementById("txtNome").value = "";
   document.getElementById("txtEmail").value = "";
+  document.getElementById("txtCep").value = "";
+  document.getElementById("txtLogradouro").value = "";
+  document.getElementById("txtBairro").value = "";
+  document.getElementById("txtUF").value = "";
+  document.getElementById("txtMunicipio").value = "";
+  document.getElementById("txtNumero").value = "";
+  document.getElementById("txtComplemento").value = "";
 
   removeElement()
 }
@@ -94,7 +108,7 @@ const getList = async () => {
   })
     .then((response) => response.json())
     .then((data) => {
-      data.clientes.forEach(cliente => insertList(cliente.cpf, cliente.nome, cliente.email))
+      data.clientes.forEach(cliente => insertList(cliente.cpf, cliente.nome, cliente.email, cliente.cep, cliente.endereco, cliente.bairro, cliente.uf, cliente.municipio, cliente.numero, cliente.complemento))
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -106,11 +120,18 @@ const getList = async () => {
   Função para colocar um item na lista do servidor via requisição POST
   --------------------------------------------------------------------------------------
 */
-const postItem = async (cpf, nome, email) => {
+const postItem = async (cpf, nome, email, cep, endereco, bairro, uf, municipio, numero, complemento) => {
   const formData = new FormData();
   formData.append('cpf', cpf);
   formData.append('nome', nome);
   formData.append('email', email);
+  formData.append('cep', cep);
+  formData.append('endereco', endereco);
+  formData.append('bairro', bairro);
+  formData.append('uf', uf);
+  formData.append('municipio', municipio);
+  formData.append('numero', numero);
+  formData.append('complemento', complemento);
 
   let url = 'http://127.0.0.1:5000/cliente';
   fetch(url, {
@@ -119,7 +140,7 @@ const postItem = async (cpf, nome, email) => {
   })
     .then((response) => response.json())
 	.then((cliente) => {
-	  insertList(cliente.cpf, cliente.nome, cliente.email);
+	  insertList(cliente.cpf, cliente.nome, cliente.email, cliente.cep, cliente.endereco, cliente.bairro, cliente.uf, cliente.municipio, cliente.numero, cliente.complemento);
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -159,7 +180,6 @@ const buscaCep = () => {
 	document.getElementById("txtUF").value = "";
 	document.getElementById("txtMunicipio").value = "";
 
-
 	let url = 'http://127.0.0.1:5000/consulta-cep?cep=' + cep;
 	fetch(url, {
 		method: 'get'
@@ -171,6 +191,9 @@ const buscaCep = () => {
       document.getElementById("txtBairro").value = endereco.bairro;
       document.getElementById("txtUF").value = endereco.uf;
       document.getElementById("txtMunicipio").value = endereco.localidade;
+    }
+    else{
+      alert("Cep não encontrado!")
     }
 	})
     .catch((error) => {

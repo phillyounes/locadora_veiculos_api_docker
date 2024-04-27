@@ -8,6 +8,13 @@ class ClienteSchema(BaseModel):
     cpf: str = "11111111111"
     nome: str = "José da Silva"
     email: str = "xxx@xxx.com"
+    cep: str = "22777000"
+    endereco: str = "endereço"
+    bairro: str = "bairro"
+    uf: str = "RJ"
+    municipio: str = "município"
+    numero: str = "100"
+    complemento: str = "complemento"
 
 
 class ClienteBuscaSchema(BaseModel):
@@ -33,6 +40,13 @@ def apresenta_clientes(clientes: List[Cliente]):
             "cpf": cliente.cpf,
             "nome": cliente.nome,
             "email": cliente.email,
+            "cep": cliente.cep,
+            "endereco": cliente.endereco,
+            "bairro": cliente.bairro,
+            "uf": cliente.uf,
+            "municipio": cliente.municipio,
+            "numero": cliente.numero,
+            "complemento": cliente.complemento
         })
 
     return {"clientes": result}
@@ -45,6 +59,13 @@ class ClienteViewSchema(BaseModel):
     cpf: str = "11111111111"
     nome: str = "José da Silva"
     email: str = "xxx@xxx.com"
+    cep: str = "22777000"
+    endereco: str = "endereço"
+    bairro: str = "bairro"
+    uf: str = "RJ"
+    municipio: str = "município"
+    numero: str = "100"
+    complemento: str = "complemento"
 
 class ClienteDelSchema(BaseModel):
     """ Define como deve ser a estrutura do dado retornado após uma requisição de remoção. """
@@ -63,4 +84,11 @@ def apresenta_cliente(cliente: Cliente):
         "cpf": cliente.cpf,
         "nome": cliente.nome,
         "email": cliente.email,
+        "cep": cliente.cep,
+        "endereco": cliente.endereco,
+        "bairro": cliente.bairro,
+        "uf": cliente.uf,
+        "municipio": cliente.municipio,
+        "numero": cliente.numero,
+        "complemento": cliente.complemento
     }

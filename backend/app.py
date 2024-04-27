@@ -212,6 +212,13 @@ def add_cliente(form: ClienteSchema):
         cpf=form.cpf,
         nome=form.nome,
         email=form.email,
+        cep=form.cep,
+        endereco=form.endereco,
+        bairro=form.bairro,
+        uf=form.uf,
+        municipio=form.municipio,
+        numero=form.numero,
+        complemento=form.complemento
         )
     logger.debug(f"Adicionando cliente de CPF: '{cliente.cpf}'")
     try:
@@ -304,31 +311,4 @@ def get_cep(query: CepConsultaSchema):
     else:
         return {"mesage": "Não encontrado"}, 404
 
-# @app.put('/cliente', tags=[cliente_tag],
-#           responses={"200": ClienteViewSchema, "409": ErrorSchema, "400": ErrorSchema})
-# def add_cliente(form: ClienteSchema):
-
-#     cliente = Cliente(
-#         cpf=form.cpf,
-#         nome=form.nome,
-#         email=form.email,
-#         )
-#     logger.debug(f"Adicionando cliente de CPF: '{cliente.cpf}'")
-#     try:
-        
-#         session = Session() # criando conexão com a base
-#         session.add(cliente) # adicionando carro
-#         session.commit() # efetivando o camando de adição de novo item na tabela
-#         logger.debug(f"Adicionado cliente de CPF: '{cliente.cpf}'")
-#         return apresenta_cliente(cliente), 200
-
-#     except IntegrityError as e:
-#         error_msg = "Cliente de mesmo CPF já inserido na base"
-#         logger.warning(f"Erro ao adicionar cliente de CPF '{cliente.cpf}', {error_msg}")
-#         return {"mesage": error_msg}, 409
-
-#     except Exception as e: # caso um erro fora do previsto
-#         error_msg = "Não foi possível salvar novo cliente :/"
-#         logger.warning(f"Erro ao adicionar cliente '{cliente.cpf}', {error_msg}")
-#         return {"mesage": error_msg}, 400
 # *************************************************************************************
