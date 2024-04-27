@@ -18,10 +18,8 @@ Pelo Visual Studio Code,
 
 Após a execução dos comandos, irá criar as 3 imagens e subir os serviços dos containers.
 
-```
-O Front-end está publicado em http://localhost:8089
-As APIs estão publicadas em http://localhost:5000
-```
+* O Front-end está publicado em http://localhost:8089
+* As APIs estão publicadas em http://localhost:5000
 
 Links da apresentação no youtube:
 + Apresentação do Projeto e Fluxograma: https://www.youtube.com/watch?v=2w3F3C1zyZk
