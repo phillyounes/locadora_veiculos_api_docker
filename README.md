@@ -14,7 +14,7 @@ Pelo Visual Studio Code,
 * Abrir o terminal
 * Executar o comando docker-compose build
 * Executar o comando docker-compose up
-
+```
 
 Após a execução dos comandos, irá criar as 3 imagens e subir os serviços dos containers.
 
