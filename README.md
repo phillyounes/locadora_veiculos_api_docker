@@ -7,29 +7,19 @@ O objetivo desse projeto é cadastrar o carro, marcar como alugado e realizar a 
 ---
 ## Como executar 
 
+É necessário ter instalado o docker desktop. (https://www.docker.com/products/docker-desktop/)
 
-Será necessário ter todas as libs python listadas no `requirements.txt` instaladas.
-Após clonar o repositório, é necessário ir ao diretório raiz, pelo terminal, para poder executar os comandos descritos abaixo.
+Pelo Visual Studio Code,
+* Abrir o terminal
+* Executar o comando docker-compose build
+* Executar o comando docker-compose up
 
-> É fortemente indicado o uso de ambientes virtuais do tipo [virtualenv](https://virtualenv.pypa.io/en/latest/installation.html).
+Após a execução dos comandos, irá criar as 3 imagens e subir os serviços dos containers.
 
-```
-(env)$ pip install -r requirements.txt
-```
+O Front-end está publicado em http://localhost:8089
+As APIs estão publicadas em http://localhost:5000
 
-Este comando instala as dependências/bibliotecas, descritas no arquivo `requirements.txt`.
-
-Para executar a API basta executar:
-
-```
-(env)$ flask run --host 0.0.0.0 --port 5000
-```
-
-Em modo de desenvolvimento é recomendado executar utilizando o parâmetro reload, que reiniciará o servidor
-automaticamente após uma mudança no código fonte. 
-
-```
-(env)$ flask run --host 0.0.0.0 --port 5000 --reload
-```
-
-Abra o [http://localhost:5000/#/](http://localhost:5000/#/) no navegador para verificar o status da API em execução.
+Links da apresentação no youtube:
+Apresentação do Projeto e Fluxograma: https://www.youtube.com/watch?v=2w3F3C1zyZk
+Apresentação do fluxo do sistema e APIs: https://www.youtube.com/watch?v=SCDQtE5oLcg
+Apresentação da componente externa: https://www.youtube.com/watch?v=YcytZeXbWmI
