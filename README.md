@@ -10,9 +10,11 @@ O objetivo desse projeto é cadastrar o carro, marcar como alugado e realizar a 
 É necessário ter instalado o docker desktop. (https://www.docker.com/products/docker-desktop/)
 
 Pelo Visual Studio Code,
+```
 * Abrir o terminal
 * Executar o comando docker-compose build
 * Executar o comando docker-compose up
+```
 
 Após a execução dos comandos, irá criar as 3 imagens e subir os serviços dos containers.
 
